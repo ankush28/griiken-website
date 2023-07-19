@@ -1,0 +1,29 @@
+.active {
+  border-bottom: 3px solid black;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+}
+.fixed {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(19.5px);
+  -webkit-backdrop-filter: blur(19.5px);
+}
+.active_mobile {
+  background-color: var(--logo-color);
+  color: white;
+}
+.navContact:hover {
+  color: var(--logo-color);
+  background-color: white;
+  border: 1px solid var(--logo-color);
+}
+.navContact {
+  background-color: var(--logo-color);
+  color: white;
+  border-radius: 4px;
+  font-weight: 500;
+  border: 1px solid var(--logo-color);
+}
