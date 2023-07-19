@@ -7,7 +7,7 @@
     aria-label="Global"
   >
     <div class="flex lg:flex-1">
-      <a href="#" class="-m-1.5 p-1.5">
+      <a [routerLink]="['/']" class="-m-1.5 p-1.5">
         <span class="sr-only">Griiken</span>
         <img
           class="h-8 w-auto"
@@ -42,39 +42,39 @@
       </button>
     </div>
     <div class="hidden lg:flex lg:gap-x-12">
-      <a
+      <a [routerLink]="['/']" style="cursor: pointer;"
         (click)="scrollToSection('home')"
         [ngClass]="{ active: activeSection === 'home' }"
         class="text-sm font-semibold leading-6 text-gray-900"
         >Home</a
       >
 
-      <a
+      <a [routerLink]="['/']" style="cursor: pointer;"
         (click)="scrollToSection('features')"
         [ngClass]="{ active: activeSection === 'features' }"
         class="text-sm font-semibold leading-6 text-gray-900"
         >Features</a
       >
-      <a
+      <a [routerLink]="['/']" style="cursor: pointer;"
         (click)="scrollToSection('process')"
         [ngClass]="{ active: activeSection === 'process' }"
         class="text-sm font-semibold leading-6 text-gray-900"
         >Process</a
       >
 
-      <a
+      <a [routerLink]="['/']" style="cursor: pointer;"
         (click)="scrollToSection('solutions')"
         [ngClass]="{ active: activeSection === 'solutions' }"
         class="text-sm font-semibold leading-6 text-gray-900"
         >Solutions</a
       >
-      <a
+      <a [routerLink]="['/']" style="cursor: pointer;"
         (click)="scrollToSection('pricing')"
         [ngClass]="{ active: activeSection === 'pricing' }"
         class="text-sm font-semibold leading-6 text-gray-900"
         >Pricing</a
       >
-      <a
+      <a [routerLink]="['/']" style="cursor: pointer;"
         (click)="scrollToSection('blogs')"
         [ngClass]="{ active: activeSection === 'blogs' }"
         class="text-sm font-semibold leading-6 text-gray-900"
@@ -82,7 +82,7 @@
       >
     </div>
     <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-      <a  href="#" class="navContact py-2.5 px-2 text-sm font-semibold leading-6 text-gray-900"
+      <a [routerLink]="['/contactus']" style="cursor: pointer; font-size: 16px;"  class="navContact py-2 px-4  text-sm font-semibold leading-6 text-gray-900"
         >Contact us<span aria-hidden="true">&rarr;</span></a
       >
     </div>
@@ -162,7 +162,7 @@
           </div>
           <div class="py-6">
             <a style="background-color: var(--logo-color); color: white;"
-              href="#"
+            [routerLink]="['/contactus']"
               class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
               >Contact us</a
             >

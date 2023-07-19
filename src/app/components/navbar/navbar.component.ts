@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -10,8 +11,25 @@ export class NavbarComponent {
   activeSection: string | null = '';
   isNavbarFixed = false;
   offset = 200;
-
   
+  constructor(private router: Router) {
+    this.activeSection = '';
+    if(this.router.url === '/'){
+      this.updateActiveSection()
+    }else{
+
+    }
+  }
+  @HostListener('window:scroll', ['$event'])
+  onScroll() {
+    this.isNavbarFixed = window.pageYOffset > 100;
+    this.updateNavbarFixed();
+ 
+    if(this.router.url === '/'){
+      this.updateActiveSection();
+    }
+  }
+
   test(){
     if(this.isMenuOpen){
       this.isMenuOpen = false;
@@ -22,50 +40,46 @@ export class NavbarComponent {
     }
   }
 
-
-  @HostListener('window:scroll', ['$event'])
-  onScroll() {
-    this.updateNavbarFixed();
-    this.updateActiveSection();
-  }
-  
   updateNavbarFixed() {
     const scrollPosition = window.pageYOffset;
-    
     this.isNavbarFixed = scrollPosition > 0;
   }
 
   scrollToSection(sectionId: string) {
     const sectionElement = document.getElementById(sectionId);
     if (sectionElement) {
-      // Calculate the offset to center the section on the screen
       const windowHeight = window.innerHeight;
       const sectionHeight = sectionElement.clientHeight;
       const offset = Math.max((windowHeight - sectionHeight) / 2, 0);
   
-      // Scroll to the section with the calculated offset
       sectionElement.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
     } else {
       console.warn(`Element with ID '${sectionId}' not found.`);
     }
   }
   updateActiveSection() {
+    console.log(this.activeSection);
     const sections = document.querySelectorAll('section');
     const scrollPosition = window.pageYOffset + this.offset;
+    console.log(scrollPosition);
   
-    // Find the currently visible section based on the section IDs
-    for (let i = 0; i < sections.length; i++) {
-      const section = sections[i];
-      const sectionTop = section.offsetTop - this.offset; // Update the sectionTop calculation
-      const sectionBottom = sectionTop + section.offsetHeight;
-      const sectionId = section.getAttribute('id');
-  
-      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-        if (sectionId !== this.activeSection) {
-          this.activeSection = sectionId;
-          break;
+    if(scrollPosition === 200){
+      this.activeSection = 'home'
+    }else{
+      for (let i = 0; i < sections.length; i++) {
+        const section = sections[i];
+        const sectionTop = section.offsetTop - this.offset;
+        const sectionBottom = sectionTop + section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+    
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+          if (sectionId !== this.activeSection) {
+            this.activeSection = sectionId;
+            break;
+          }
         }
       }
     }
+    
   }
 }

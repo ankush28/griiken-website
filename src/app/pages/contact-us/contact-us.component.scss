@@ -1,30 +1,14 @@
-.solutionTitle:hover{
-    h2{
-        color: var(--logo-color);
-    }
+.contactbtn{
+    font-weight: 400; 
+    background: blue;
     
 }
+// .contactbtn:hover{
+//     background-color: white;
+//     border: 1px solid  var(--logo-color);
+//     color: var(--logo-color);
+// }
 
-.main-card{
-    background-color: var(--logo-color);
-    p{
-        color: white;
-    }
-    h1{
-        color: white;
-    }
-    h3{
-        color: white;
-    }
-    span{
-        color: white;
-    }
-}
-
-.pricingcard:hover{
-    transition: all .5s ease;
-    transform: scale(1.05);
-}
 
 .btn{
     position: relative;

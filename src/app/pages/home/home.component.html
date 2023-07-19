@@ -1,5 +1,8 @@
+
+
+<app-navbar></app-navbar>
 <div class="test py-20">
-  <section id="home">
+  <section id="home" class="bg-white dark:bg-gray-900">
     <div class="relative isolate px-6 pt-14 lg:px-8">
       <div
         class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -43,7 +46,7 @@
             fugiat aliqua.
           </p>
           <div class="mt-10 flex items-center justify-center gap-x-6">
-            <a
+            <a [routerLink]="['/contactus']"
               class="btn rounded-md bg-indigo-600 px-10 py-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >Hire us</a
             >
@@ -54,7 +57,7 @@
     </div>
 </section>
 
-  <section id="features" class="text-gray-600 body-font">
+  <section id="features" class="text-gray-600 bg-white dark:bg-gray-900 body-font">
     <div class="container px-5 py-12 mx-auto">
       <!-- <div class="text-center mb-8">
         <h1
@@ -134,7 +137,7 @@
     </div>
   </section>
 
-  <section id="process" class="text-gray-600 body-font">
+  <section id="process" class="text-gray-600 bg-white dark:bg-gray-900 body-font">
     <div class="container px-5 py-24 mx-auto flex flex-wrap">
       <div class="flex flex-wrap w-full">
         <div class="lg:w-2/5 md:w-1/2 md:pr-10 md:py-6">
@@ -310,7 +313,7 @@
 
   
 
-  <section id="solutions" class="text-gray-600 body-font py-20">
+  <section id="solutions" class="bg-white dark:bg-gray-900 py-20">
     <div class="container px-5 py-18 mx-auto">
       <div class="flex flex-col text-center w-full mb-10">
         <h1
@@ -741,7 +744,15 @@
           Our Blog
         </h2>
       </div>
+      <div>
+        <a [routerLink]="['/blogs']" style="text-decoration: underline;
+        display: flex;
+        justify-content: end;
+        margin-bottom: 10px;" >Read all</a>
+      </div>
+      
       <div class="grid gap-8 lg:grid-cols-2">
+        
         <article
           class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
         >
@@ -871,3 +882,5 @@
     </div>
   </section>
 </div>
+
+<app-footer></app-footer>
