@@ -10,6 +10,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AllBlogsComponent } from './pages/all-blogs/all-blogs.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { NavbarV2Component } from './components/navbar-v2/navbar-v2.component';
+import { NgOptimizedImage } from '@angular/common'
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { NavbarV2Component } from './components/navbar-v2/navbar-v2.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]

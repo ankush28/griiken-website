@@ -1,6 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -11,6 +12,7 @@ export class NavbarComponent {
   activeSection: string | null = '';
   isNavbarFixed = false;
   offset = 200;
+  logo = '../../../assets/logo-no-background.png'
   
   constructor(private router: Router) {
     this.activeSection = '';
